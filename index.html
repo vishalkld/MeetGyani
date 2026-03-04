@@ -647,9 +647,6 @@ function showToast(msg) {
 // === START ===
 window.onload = function() { gen(); };
 </script>
-</body>
-</html>
-<script>
 async function loadGK() {
   const res = await fetch("https://the-trivia-api.com/v2/questions?limit=5");
   const data = await res.json();
