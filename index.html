@@ -647,32 +647,5 @@ function showToast(msg) {
 // === START ===
 window.onload = function() { gen(); };
 </script>
-async function loadGK() {
-  const res = await fetch("https://the-trivia-api.com/v2/questions?limit=5");
-  const data = await res.json();
-
-  const grid = document.getElementById("grid");
-  grid.innerHTML = ""; // पुराने facts हटाओ
-
-  data.forEach((q, i) => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <div class="card-snap">
-        <div class="cbody">
-          <div class="clbl">FACT ${i + 1}</div>
-          <div class="ch">${q.question.text}</div>
-          <div class="cd"><b>Answer:</b> ${q.correctAnswer}</div>
-        </div>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
-
-  document.getElementById("cnt").innerText = data.length;
-}
-
-// page load par auto GK
-loadGK();
-</script>
+</body>
+</html>
